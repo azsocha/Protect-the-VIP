@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ckmxgk3igprqv"]
+
+[node name="background" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 44.0
+offset_top = 220.0
+offset_right = 1190.0
+offset_bottom = 867.0
+theme_override_font_sizes/normal_font_size = 100
+text = "Team 3 - Final Project"
