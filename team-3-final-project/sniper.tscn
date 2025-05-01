@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b87pu37cfwaei"]
+
+[ext_resource type="Texture2D" uid="uid://7epgoew8qb7l" path="res://redl.png" id="1_tbfgt"]
+[ext_resource type="Texture2D" uid="uid://g1wadrs3rfgs" path="res://rlaz.png" id="2_xysxd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lf3n"]
+radius = 211.929
+height = 423.859
+
+[node name="Sniper" type="Node2D"]
+position = Vector2(481, 87)
+
+[node name="Sniper_Sprite" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.153061, 0.146939)
+texture = ExtResource("1_tbfgt")
+
+[node name="Gun Lazer" type="Sprite2D" parent="."]
+position = Vector2(2, 147)
+rotation = 1.56974
+scale = Vector2(0.235938, 0.0611111)
+texture = ExtResource("2_xysxd")
+
+[node name="Area2D" type="Area2D" parent="Gun Lazer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gun Lazer/Area2D"]
+position = Vector2(50.8609, 0.2065)
+scale = Vector2(2.73158, 0.12526)
+shape = SubResource("CapsuleShape2D_1lf3n")
