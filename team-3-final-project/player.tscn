@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmbx1"]
 size = Vector2(133, 132)
 
-[node name="player" type="RigidBody2D"]
+[node name="player" type="CharacterBody2D"]
 position = Vector2(110, 98)
 script = ExtResource("1_vyd83")
 
