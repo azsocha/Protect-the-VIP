@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8hwat35sh43l"]
+[gd_scene load_steps=3 format=3 uid="uid://rivnmqkwsfud"]
 
 [ext_resource type="Texture2D" uid="uid://8misyakukhwn" path="res://Example Character/Cisc204 final character sprite base.png" id="1_nqcn2"]
 [ext_resource type="Texture2D" uid="uid://b8r3hekoa6qas" path="res://Example Character/Cisc204 final character sprite jumping.png" id="2_uf7sd"]
