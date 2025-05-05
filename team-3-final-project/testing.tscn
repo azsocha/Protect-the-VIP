@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://uwvv1fn28da"]
+[gd_scene load_steps=5 format=3 uid="uid://uwvv1fn28da"]
 
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="1_b3w4w"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="2_r2468"]
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="3_plwkn"]
+[ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="4_tw6ie"]
 
 [node name="testing" type="Node2D"]
 
@@ -17,3 +18,5 @@ scale = Vector2(4.57318, 1.00524)
 [node name="Sniper" parent="." instance=ExtResource("3_plwkn")]
 position = Vector2(790, 66)
 scale = Vector2(0.316729, 0.258752)
+
+[node name="player_2" parent="." instance=ExtResource("4_tw6ie")]
