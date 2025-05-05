@@ -26,6 +26,7 @@ scale = Vector2(63.4155, -3.32454)
 shape = SubResource("CapsuleShape2D_wup0p")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1, 0.845452)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-26.4485, 19.3204)
