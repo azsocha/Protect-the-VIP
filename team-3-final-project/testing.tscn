@@ -16,7 +16,7 @@ position = Vector2(50, 606)
 scale = Vector2(4.57318, 1.00524)
 
 [node name="Sniper" parent="." instance=ExtResource("3_plwkn")]
-position = Vector2(790, 66)
+position = Vector2(792, 66)
 scale = Vector2(0.316729, 0.258752)
 
 [node name="player_2" parent="." instance=ExtResource("4_tw6ie")]
