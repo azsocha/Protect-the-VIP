@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgpvvcjmwt6va"]
+
+[ext_resource type="Script" path="res://dead.gd" id="1_0lo3c"]
+
+[node name="dead" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0lo3c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1039.0
+offset_bottom = 665.0
+color = Color(0.952941, 0.34902, 0.372549, 0.533333)
+
+[node name="retryLevel" type="Button" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 229.0
+offset_right = 452.0
+offset_bottom = 445.0
+text = "Retry Level"
+
+[node name="restartGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 247.0
+offset_right = 869.0
+offset_bottom = 427.0
+text = "Restart Game"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 130.0
+offset_right = 803.0
+offset_bottom = 252.0
+text = "You died!"
+
+[connection signal="pressed" from="retryLevel" to="." method="_on_retry_level_pressed"]
+[connection signal="pressed" from="restartGame" to="." method="_on_restart_game_pressed"]
