@@ -23,4 +23,5 @@ scale = Vector2(0.316729, 0.258752)
 [node name="player_2" parent="." instance=ExtResource("4_tw6ie")]
 
 [node name="Goal" parent="." instance=ExtResource("5_3c4ye")]
-position = Vector2(953, 547)
+position = Vector2(948, 312)
+scale = Vector2(4.96, 28.3175)
