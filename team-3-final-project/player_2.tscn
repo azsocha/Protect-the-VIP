@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwv5ooc24w7rm"]
+
+[ext_resource type="Texture2D" uid="uid://ba6neh2d3mns2" path="res://characterImages/crosshair.png" id="1_hoo75"]
+[ext_resource type="Script" path="res://player_2.gd" id="2_5na3c"]
+
+[node name="player_2" type="Sprite2D"]
+position = Vector2(301, 258)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hoo75")
+script = ExtResource("2_5na3c")
