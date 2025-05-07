@@ -1,22 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://uwvv1fn28da"]
+[gd_scene load_steps=6 format=3 uid="uid://uwvv1fn28da"]
 
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="1_b3w4w"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="2_r2468"]
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="3_plwkn"]
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="4_tw6ie"]
+[ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="5_3c4ye"]
 
 [node name="testing" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_b3w4w")]
-position = Vector2(112, 509)
+position = Vector2(51, 560)
 scale = Vector2(0.470306, 0.502515)
 
 [node name="platform" parent="." instance=ExtResource("2_r2468")]
-position = Vector2(50, 606)
-scale = Vector2(4.57318, 1.00524)
+position = Vector2(-35, 597)
+scale = Vector2(5.71158, 1.00524)
 
 [node name="Sniper" parent="." instance=ExtResource("3_plwkn")]
 position = Vector2(792, 66)
 scale = Vector2(0.316729, 0.258752)
 
 [node name="player_2" parent="." instance=ExtResource("4_tw6ie")]
+
+[node name="Goal" parent="." instance=ExtResource("5_3c4ye")]
+position = Vector2(953, 547)
