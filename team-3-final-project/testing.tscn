@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://uwvv1fn28da"]
+[gd_scene load_steps=8 format=3 uid="uid://uwvv1fn28da"]
 
+[ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_44adr"]
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="1_b3w4w"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="2_r2468"]
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="3_plwkn"]
@@ -8,6 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="6_6fnut"]
 
 [node name="testing" type="Node2D"]
+
+[node name="Cisc204FinalBackground1" type="Sprite2D" parent="."]
+light_mask = 0
+position = Vector2(512, 308)
+scale = Vector2(1.042, 0.612)
+texture = ExtResource("1_44adr")
 
 [node name="player" parent="." instance=ExtResource("1_b3w4w")]
 position = Vector2(51, 560)
@@ -18,7 +25,7 @@ position = Vector2(-35, 597)
 scale = Vector2(5.71158, 1.00524)
 
 [node name="Sniper" parent="." instance=ExtResource("3_plwkn")]
-position = Vector2(792, 66)
+position = Vector2(589, 178)
 scale = Vector2(0.316729, 0.258752)
 
 [node name="player_2" parent="." instance=ExtResource("4_tw6ie")]
