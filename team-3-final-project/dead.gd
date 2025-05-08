@@ -20,3 +20,10 @@ func _on_retry_level_pressed() -> void:
 
 func _on_restart_game_pressed() -> void:
 	pass 
+
+
+func _on_area_2d_died() -> void:
+	$ColorRect.show()
+	$retryLevel.show()
+	$restartGame.show()
+	$RichTextLabel.show()

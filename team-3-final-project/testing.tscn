@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://uwvv1fn28da"]
+[gd_scene load_steps=7 format=3 uid="uid://uwvv1fn28da"]
 
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="1_b3w4w"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="2_r2468"]
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="3_plwkn"]
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="4_tw6ie"]
 [ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="5_3c4ye"]
+[ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="6_6fnut"]
 
 [node name="testing" type="Node2D"]
 
@@ -25,3 +26,9 @@ scale = Vector2(0.316729, 0.258752)
 [node name="Goal" parent="." instance=ExtResource("5_3c4ye")]
 position = Vector2(948, 312)
 scale = Vector2(4.96, 28.3175)
+
+[node name="dead" parent="." instance=ExtResource("6_6fnut")]
+
+[connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+
+[editable path="Sniper"]
