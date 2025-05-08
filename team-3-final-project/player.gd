@@ -1,6 +1,8 @@
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 extends CharacterBody2D
 
+signal died
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -35,9 +37,12 @@ func _input(event):
 		var sprite_rect = Rect2(top_left, sprite_size)
 		
 		if sprite_rect.has_point(mouse_pos):
-			#queue_free()
-			#await get_tree().create_timer(0.3).timeout
-			restart_level()
+			died.emit()
+			queue_free()
 
 func restart_level():
 	get_tree().reload_current_scene()
+
+
+func _on_area_2d_died() -> void:
+	queue_free()

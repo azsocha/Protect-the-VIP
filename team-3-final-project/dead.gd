@@ -7,8 +7,6 @@ func _ready() -> void:
 	$retryLevel.hide()
 	$restartGame.hide()
 	$RichTextLabel.hide()
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,7 +17,8 @@ func _on_retry_level_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func _on_restart_game_pressed() -> void:
-	pass 
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)  
+	get_tree().change_scene_to_file("res://title.tscn")
 
 
 func _on_area_2d_died() -> void:

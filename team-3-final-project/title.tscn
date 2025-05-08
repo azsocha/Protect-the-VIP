@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://b42y2det4lv25"]
+
+[ext_resource type="Script" path="res://title.gd" id="1_p464c"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p464c")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 46.0
+offset_right = 1127.0
+offset_bottom = 375.0
+theme_override_font_sizes/normal_font_size = 100
+text = "Protect The VIP"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 221.0
+offset_right = 895.0
+offset_bottom = 580.0
+theme_override_font_sizes/font_size = 50
+text = "Play!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

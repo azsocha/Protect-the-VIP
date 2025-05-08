@@ -29,6 +29,8 @@ scale = Vector2(4.96, 28.3175)
 
 [node name="dead" parent="." instance=ExtResource("6_6fnut")]
 
+[connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 
 [editable path="Sniper"]
