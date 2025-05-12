@@ -1,5 +1,6 @@
 extends Sprite2D
 
+@export var ammo = 9999999
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,3 +13,6 @@ func _process(delta: float) -> void:
 		texture = load("res://characterImages/crosshair2.png")
 		await get_tree().create_timer(0.3).timeout
 		texture = load("res://characterImages/crosshair.png")
+
+func lastLevelAmmo():
+		pass
