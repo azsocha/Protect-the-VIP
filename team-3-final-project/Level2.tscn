@@ -9,8 +9,16 @@
 [node name="Level 2" type="Node2D"]
 
 [node name="platform" parent="." instance=ExtResource("1_y4nvs")]
-position = Vector2(80, 551)
-scale = Vector2(4.38889, 1)
+position = Vector2(1, 554)
+scale = Vector2(1.6, 1)
+
+[node name="platform2" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(401, 552)
+scale = Vector2(1.6, 1)
+
+[node name="platform3" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(791, 551)
+scale = Vector2(1.6, 1)
 
 [node name="player" parent="." instance=ExtResource("2_c2ylu")]
 position = Vector2(182, 475)
