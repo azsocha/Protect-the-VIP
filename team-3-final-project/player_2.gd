@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 		texture = load("res://characterImages/crosshair2.png")
 		await get_tree().create_timer(0.3).timeout
 		texture = load("res://characterImages/crosshair.png")
+		ammo = ammo - 1
+		print(ammo)
 
 func lastLevelAmmo():
 		ammo = 5
