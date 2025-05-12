@@ -9,23 +9,59 @@
 [node name="Level 1" type="Node2D"]
 
 [node name="platform" parent="." instance=ExtResource("1_82bnj")]
-position = Vector2(80, 551)
-scale = Vector2(4.38889, 1)
+position = Vector2(-116, 532)
+scale = Vector2(3, 1)
+
+[node name="platform2" parent="." instance=ExtResource("1_82bnj")]
+position = Vector2(450, 470)
+
+[node name="platform3" parent="." instance=ExtResource("1_82bnj")]
+position = Vector2(566, 389)
+
+[node name="platform4" parent="." instance=ExtResource("1_82bnj")]
+position = Vector2(665, 314)
+
+[node name="platform5" parent="." instance=ExtResource("1_82bnj")]
+position = Vector2(778, 240)
 
 [node name="player" parent="." instance=ExtResource("2_4yyxw")]
-position = Vector2(182, 475)
+position = Vector2(42, 489)
 scale = Vector2(0.526316, 0.529412)
 
 [node name="player_2" parent="." instance=ExtResource("3_5ldi5")]
 position = Vector2(310, 227)
 
 [node name="Sniper" parent="." instance=ExtResource("4_n34q8")]
-position = Vector2(814, 47)
+position = Vector2(900, 450)
+rotation = 3.14159
+
+[node name="StaticBody2D" parent="Sniper" index="1"]
+position = Vector2(19.8377, 11.5896)
+
+[node name="Sniper2" parent="." instance=ExtResource("4_n34q8")]
+position = Vector2(900, 375)
+rotation = 3.14159
+
+[node name="StaticBody2D" parent="Sniper2" index="1"]
+position = Vector2(19.8377, 11.5896)
+
+[node name="Sniper3" parent="." instance=ExtResource("4_n34q8")]
+position = Vector2(900, 275)
+rotation = 3.14159
+
+[node name="StaticBody2D" parent="Sniper3" index="1"]
+position = Vector2(19.8377, 11.5896)
 
 [node name="dead" parent="." instance=ExtResource("5_g6ajj")]
 
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper2/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper3/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper3/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 
 [editable path="Sniper"]
+[editable path="Sniper2"]
+[editable path="Sniper3"]

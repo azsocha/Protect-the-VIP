@@ -6,9 +6,10 @@
 [ext_resource type="Script" path="res://death_laser.gd" id="3_m7l6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wup0p"]
-radius = 10.1241
+radius = 10.1677
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cm8vw"]
+radius = 11.1388
 
 [node name="Sniper" type="Sprite2D"]
 position = Vector2(496, 49)
