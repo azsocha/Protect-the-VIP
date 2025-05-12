@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc7t2heqt68ak"]
+
+[ext_resource type="Script" path="res://level_3.gd" id="1_c5y8f"]
+[ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_vav1c"]
+[ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="2_f1xfl"]
+[ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="3_misgn"]
+[ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_nivxa"]
+[ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_krjdo"]
+
+[node name="Level 3" type="Node2D"]
+script = ExtResource("1_c5y8f")
+
+[node name="platform" parent="." instance=ExtResource("1_vav1c")]
+position = Vector2(80, 551)
+scale = Vector2(4.38889, 1)
+
+[node name="player" parent="." instance=ExtResource("2_f1xfl")]
+position = Vector2(182, 475)
+scale = Vector2(0.526316, 0.529412)
+
+[node name="player_2" parent="." instance=ExtResource("3_misgn")]
+position = Vector2(310, 227)
+
+[node name="Sniper" parent="." instance=ExtResource("4_nivxa")]
+position = Vector2(814, 47)
+
+[node name="dead" parent="." instance=ExtResource("5_krjdo")]
+
+[connection signal="Level3" from="." to="player_2" method="lastLevelAmmo"]
+[connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+
+[editable path="Sniper"]

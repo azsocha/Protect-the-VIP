@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 		texture = load("res://characterImages/crosshair.png")
 
 func lastLevelAmmo():
-		pass
+		ammo = 5
+		print(ammo)
