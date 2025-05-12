@@ -37,6 +37,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and haveAmmo:
 		var tex = $Sprite2D.texture
