@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 signal died
 
+var haveAmmo = true
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -26,7 +28,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and haveAmmo:
 		var tex = $Sprite2D.texture
 		if tex == null:
 			return
@@ -46,3 +48,6 @@ func restart_level():
 
 func _on_area_2d_died() -> void:
 	queue_free()
+
+func outOfAmmo():
+	haveAmmo = false

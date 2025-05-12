@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @export var ammo = 9999999
+signal outOfAmmo
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +16,9 @@ func _process(delta: float) -> void:
 		texture = load("res://characterImages/crosshair.png")
 		ammo = ammo - 1
 		print(ammo)
+		if ammo < 1:
+			outOfAmmo.emit()
+			print("Out of Ammo!")
 
 func lastLevelAmmo():
 		ammo = 5

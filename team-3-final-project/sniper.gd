@@ -1,8 +1,9 @@
 extends Sprite2D
 
+var haveAmmo = true
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and haveAmmo:
 		var tex = texture
 		if tex == null:
 			return
@@ -14,3 +15,6 @@ func _input(event):
 		
 		if sprite_rect.has_point(mouse_pos):
 			queue_free()
+
+func outOfAmmo():
+	haveAmmo = false
