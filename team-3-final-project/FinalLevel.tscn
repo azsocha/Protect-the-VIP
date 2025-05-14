@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuqmwvqhi2frl"]
+[gd_scene load_steps=6 format=3 uid="uid://c0hku5kdgh52w"]
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_xccnb"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="2_36vch"]
@@ -22,5 +22,5 @@ position = Vector2(310, 227)
 
 [node name="dead" parent="." instance=ExtResource("6_2kwai")]
 
-[connection signal="Level3" from="." to="player_2" method="lastLevelAmmo"]
+[connection signal="FinalLevel" from="." to="player_2" method="cutsceneAmmo"]
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
