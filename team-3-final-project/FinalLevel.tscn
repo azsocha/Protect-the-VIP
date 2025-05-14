@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuqmwvqhi2frl"]
+[gd_scene load_steps=7 format=3 uid="uid://cuqmwvqhi2frl"]
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_xccnb"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="2_36vch"]
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="3_utqiv"]
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="4_8vada"]
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="6_2kwai"]
+[ext_resource type="Script" path="res://label.gd" id="6_sevkk"]
 
 [node name="Final Level" type="Node2D"]
 script = ExtResource("1_xccnb")
@@ -28,6 +29,8 @@ offset_top = 436.0
 offset_right = 793.0
 offset_bottom = 518.0
 text = "Blah blah blah"
+script = ExtResource("6_sevkk")
 
-[connection signal="Level3" from="." to="player_2" method="lastLevelAmmo"]
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
