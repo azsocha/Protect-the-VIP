@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuqmwvqhi2frl"]
+
+[ext_resource type="Script" path="res://level_3.gd" id="1_xccnb"]
+[ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="2_36vch"]
+[ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="3_utqiv"]
+[ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="4_8vada"]
+[ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="6_2kwai"]
+
+[node name="Level 3" type="Node2D"]
+script = ExtResource("1_xccnb")
+
+[node name="platform" parent="." instance=ExtResource("2_36vch")]
+position = Vector2(-320, 592)
+scale = Vector2(4.38889, 1)
+
+[node name="player" parent="." instance=ExtResource("3_utqiv")]
+position = Vector2(37, 551)
+scale = Vector2(0.526316, 0.529412)
+
+[node name="player_2" parent="." instance=ExtResource("4_8vada")]
+position = Vector2(310, 227)
+
+[node name="dead" parent="." instance=ExtResource("6_2kwai")]
+
+[connection signal="Level3" from="." to="player_2" method="lastLevelAmmo"]
+[connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
