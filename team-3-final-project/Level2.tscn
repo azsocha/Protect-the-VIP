@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn2jo1fssf4rs"]
+[gd_scene load_steps=8 format=3 uid="uid://bn2jo1fssf4rs"]
 
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_y4nvs"]
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="2_c2ylu"]
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="3_3c4p0"]
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_5vhnd"]
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_mts6p"]
+[ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_lappd"]
+[ext_resource type="Script" path="res://goal_area_two.gd" id="7_ydnke"]
 
 [node name="Level 2" type="Node2D"]
 
@@ -31,6 +33,11 @@ position = Vector2(310, 227)
 position = Vector2(814, 47)
 
 [node name="dead" parent="." instance=ExtResource("5_mts6p")]
+
+[node name="Node2D" parent="." instance=ExtResource("6_lappd")]
+position = Vector2(999, 213)
+scale = Vector2(3.30667, 33.8079)
+script = ExtResource("7_ydnke")
 
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
