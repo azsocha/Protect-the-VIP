@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 
 func lastLevelAmmo():
 		ammo = 2
-		print(ammo)
 
 func cutsceneAmmo():
 		ammo = 1
