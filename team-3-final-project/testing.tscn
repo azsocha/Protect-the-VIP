@@ -39,6 +39,11 @@ scale = Vector2(4.96, 28.3175)
 offset_left = -8.0
 offset_right = -8.0
 
+[node name="platform2" parent="." instance=ExtResource("2_r2468")]
+position = Vector2(-2, 9)
+rotation = 1.57827
+scale = Vector2(3.28348, 1.26145)
+
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]

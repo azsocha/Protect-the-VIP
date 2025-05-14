@@ -19,6 +19,16 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+	# player animations
+	if velocity.length() > 0 and is_on_floor():
+		$AnimatedSprite2D.play()
+	else:
+		$AnimatedSprite2D.stop()
+	if Input.is_action_just_pressed("move_right"):
+		$AnimatedSprite2D.animation = "right"
+	elif Input.is_action_just_pressed("move_left"):
+		$AnimatedSprite2D.animation = "left"
+
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -26,6 +36,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and haveAmmo:
