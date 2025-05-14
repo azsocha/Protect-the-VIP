@@ -6,7 +6,8 @@
 [ext_resource type="Script" path="res://death_laser.gd" id="3_m7l6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wup0p"]
-radius = 10.1677
+radius = 13.8129
+height = 32.1014
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cm8vw"]
 radius = 11.1388

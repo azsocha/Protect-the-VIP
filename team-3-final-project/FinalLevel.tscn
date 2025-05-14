@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="4_8vada"]
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="6_2kwai"]
 
-[node name="Level 3" type="Node2D"]
+[node name="Final Level" type="Node2D"]
 script = ExtResource("1_xccnb")
 
 [node name="platform" parent="." instance=ExtResource("2_36vch")]
@@ -21,6 +21,13 @@ scale = Vector2(0.526316, 0.529412)
 position = Vector2(310, 227)
 
 [node name="dead" parent="." instance=ExtResource("6_2kwai")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 519.0
+offset_top = 436.0
+offset_right = 793.0
+offset_bottom = 518.0
+text = "Blah blah blah"
 
 [connection signal="Level3" from="." to="player_2" method="lastLevelAmmo"]
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
