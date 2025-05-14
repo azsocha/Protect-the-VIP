@@ -21,5 +21,8 @@ func _process(delta: float) -> void:
 			print("Out of Ammo!")
 
 func lastLevelAmmo():
-		ammo = 5
+		ammo = 2
 		print(ammo)
+
+func cutsceneAmmo():
+		ammo = 1

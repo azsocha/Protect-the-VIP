@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs13rjckuxq5f"]
+[gd_scene load_steps=7 format=3 uid="uid://bs13rjckuxq5f"]
 
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_82bnj"]
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="2_4yyxw"]
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="3_5ldi5"]
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_n34q8"]
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_g6ajj"]
+[ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_2vhen"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -53,6 +54,10 @@ rotation = 3.14159
 position = Vector2(19.8377, 11.5896)
 
 [node name="dead" parent="." instance=ExtResource("5_g6ajj")]
+
+[node name="Node2D" parent="." instance=ExtResource("6_2vhen")]
+position = Vector2(973, 67)
+scale = Vector2(4.96, 17.2375)
 
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
