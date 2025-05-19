@@ -53,6 +53,14 @@ rotation = 3.14159
 [node name="StaticBody2D" parent="Sniper3" index="1"]
 position = Vector2(19.8377, 11.5896)
 
+[node name="Sniper3" parent="Sniper3" instance=ExtResource("4_n34q8")]
+position = Vector2(7934.83, -1499.09)
+rotation = 3.14159
+scale = Vector2(10.6831, 1.55361)
+
+[node name="StaticBody2D" parent="Sniper3/Sniper3" index="1"]
+position = Vector2(19.8377, 11.5896)
+
 [node name="dead" parent="." instance=ExtResource("5_g6ajj")]
 
 [node name="Node2D" parent="." instance=ExtResource("6_2vhen")]
@@ -66,7 +74,10 @@ scale = Vector2(4.96, 17.2375)
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper3/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper3/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper3/Sniper3/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper3/Sniper3/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 
 [editable path="Sniper"]
 [editable path="Sniper2"]
 [editable path="Sniper3"]
+[editable path="Sniper3/Sniper3"]

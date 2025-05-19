@@ -39,8 +39,16 @@ position = Vector2(999, 213)
 scale = Vector2(3.30667, 33.8079)
 script = ExtResource("7_ydnke")
 
+[node name="Sniper2" parent="." instance=ExtResource("4_5vhnd")]
+position = Vector2(1610, 753)
+rotation = 3.13406
+scale = Vector2(1.51478, 0.653578)
+
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper2/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 
 [editable path="Sniper"]
+[editable path="Sniper2"]
