@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=7 format=3 uid="uid://cuqmwvqhi2frl"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://c0hku5kdgh52w"]
+>>>>>>> ab62402c9006ada876aaba068619c246e95297ed
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_xccnb"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="2_36vch"]
