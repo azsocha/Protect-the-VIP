@@ -85,10 +85,6 @@ scale = Vector2(2, 0.226)
 position = Vector2(19.8366, -17.1232)
 
 [node name="dead" parent="." instance=ExtResource("5_mts6p")]
-offset_left = 1111.0
-offset_top = -1.0
-offset_right = 1111.0
-offset_bottom = -1.0
 
 [node name="Node2D" parent="." instance=ExtResource("6_lappd")]
 position = Vector2(1011, -29)
