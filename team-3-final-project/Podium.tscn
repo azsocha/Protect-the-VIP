@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3qx7kd18jr4b"]
+
+[ext_resource type="Texture2D" uid="uid://dxjexut13e8um" path="res://Sprites/USA Podium.png" id="1_1chh2"]
+
+[node name="Node2D" type="Sprite2D"]
+position = Vector2(502, 296)
+scale = Vector2(0.117139, 0.0974501)
+texture = ExtResource("1_1chh2")
