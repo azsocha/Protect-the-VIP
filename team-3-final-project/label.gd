@@ -9,10 +9,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if count == 1:
-		Label.text = "Blah"
+		text = "Blah"
 	elif count == 2:
-		Label.text = "Blah blah"
+		text = "Blah blah"
 	elif count == 3:
-		Label.text = "Blah blah blah"
+		text = "Blah blah blah"
 	else:
-		Label.text = "Shh"
+		text = "Shh"
+
+
+func _on_timer_timeout() -> void:
+	count = count + 1
