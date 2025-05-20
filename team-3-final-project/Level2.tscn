@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn2jo1fssf4rs"]
+[gd_scene load_steps=12 format=3 uid="uid://bn2jo1fssf4rs"]
 
 [ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_5kwk0"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_y4nvs"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://goal_areal2.gd" id="8_8xcyf"]
 [ext_resource type="Texture2D" uid="uid://c7u0a2w6o362e" path="res://streetSign.png" id="9_xx4ar"]
 [ext_resource type="PackedScene" uid="uid://h3j3wynmxivf" path="res://bomber.tscn" id="10_bg3h3"]
+[ext_resource type="PackedScene" uid="uid://dvdfumi2h4e8e" path="res://ammo.tscn" id="11_vt5am"]
 
 [node name="Level 2" type="Node2D"]
 
@@ -54,6 +55,7 @@ scale = Vector2(0.526316, 0.529412)
 
 [node name="player_2" parent="." instance=ExtResource("3_3c4p0")]
 position = Vector2(310, 227)
+ammo = 2
 
 [node name="Sniper" parent="." instance=ExtResource("4_5vhnd")]
 position = Vector2(375, 47)
@@ -106,7 +108,14 @@ texture = ExtResource("9_xx4ar")
 [node name="bomber" parent="." instance=ExtResource("10_bg3h3")]
 position = Vector2(915, 263)
 
+[node name="Ammo" parent="." instance=ExtResource("11_vt5am")]
+
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
+[connection signal="outOfAmmo" from="player_2" to="player" method="outOfAmmo"]
+[connection signal="outOfAmmo" from="player_2" to="Sniper" method="outOfAmmo"]
+[connection signal="outOfAmmo" from="player_2" to="Sniper3" method="outOfAmmo"]
+[connection signal="outOfAmmo" from="player_2" to="Sniper4" method="outOfAmmo"]
+[connection signal="outOfAmmo" from="player_2" to="bomber" method="outOfAmmo"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper3/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
