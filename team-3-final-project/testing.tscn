@@ -47,7 +47,6 @@ scale = Vector2(3.28348, 1.26145)
 
 [node name="bomber" parent="." instance=ExtResource("8_ypxxb")]
 position = Vector2(309, 559)
-scale = Vector2(0.414, 0.386)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(955, 475)
