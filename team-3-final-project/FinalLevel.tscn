@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://d315g5w8plhy7"]
+
+[ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_lqws8"]
+[ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="2_3ey1a"]
+[ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="3_u3g71"]
+[ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_tr6a4"]
+[ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_bcosa"]
+[ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_i5wwc"]
+[ext_resource type="Script" path="res://goal_area_two.gd" id="7_cct0h"]
+[ext_resource type="Script" path="res://collision_shape_2d.gd" id="8_vp3tf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ur61"]
+size = Vector2(111, 196)
+
+[node name="Level 2" type="Node2D"]
+
+[node name="platform" parent="." instance=ExtResource("1_lqws8")]
+position = Vector2(1, 554)
+scale = Vector2(3, 1)
+
+[node name="platform2" parent="." instance=ExtResource("1_lqws8")]
+position = Vector2(543.3, 537)
+scale = Vector2(0.1, 1)
+
+[node name="player" parent="." instance=ExtResource("2_3ey1a")]
+position = Vector2(49, 506)
+scale = Vector2(0.526316, 0.529412)
+
+[node name="player_2" parent="." instance=ExtResource("3_u3g71")]
+position = Vector2(310, 227)
+
+[node name="dead" parent="." instance=ExtResource("5_bcosa")]
+offset_left = 1053.0
+offset_top = 58.0
+offset_right = 1053.0
+offset_bottom = 58.0
+
+[node name="Node2D" parent="." instance=ExtResource("6_i5wwc")]
+position = Vector2(999, 213)
+scale = Vector2(3.30667, 33.8079)
+script = ExtResource("7_cct0h")
+
+[node name="Sniper2" parent="." instance=ExtResource("4_tr6a4")]
+position = Vector2(1610, 753)
+rotation = 3.13406
+scale = Vector2(1.51478, 0.653578)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="StopShape" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(233, 458)
+shape = SubResource("RectangleShape2D_0ur61")
+script = ExtResource("8_vp3tf")
+
+[connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper2/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="input_event" from="StaticBody2D" to="player" method="_on_static_body_2d_input_event"]
+
+[editable path="Sniper2"]
