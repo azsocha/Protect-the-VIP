@@ -6,7 +6,7 @@
 
 [node name="player_2" type="Sprite2D"]
 position = Vector2(301, 258)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_hoo75")
 script = ExtResource("2_5na3c")
 
