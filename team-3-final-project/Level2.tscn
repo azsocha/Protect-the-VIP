@@ -17,19 +17,37 @@ scale = Vector2(1.041, 0.661)
 texture = ExtResource("1_5kwk0")
 
 [node name="platform" parent="." instance=ExtResource("1_y4nvs")]
-position = Vector2(1, 554)
+position = Vector2(-162, 175)
 scale = Vector2(1.6, 1)
 
 [node name="platform2" parent="." instance=ExtResource("1_y4nvs")]
-position = Vector2(401, 552)
-scale = Vector2(1.6, 1)
+position = Vector2(169, 302)
+scale = Vector2(0.5, 1)
+
+[node name="platform4" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(318, 248)
+scale = Vector2(0.5, 1)
+
+[node name="platform5" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(468, 311)
+scale = Vector2(0.5, 1)
+
+[node name="platform6" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(631, 262)
+scale = Vector2(0.5, 1)
 
 [node name="platform3" parent="." instance=ExtResource("1_y4nvs")]
-position = Vector2(791, 551)
+position = Vector2(812, 311)
 scale = Vector2(1.6, 1)
 
+[node name="platform7" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(267, 358)
+
+[node name="platform8" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(585, 366)
+
 [node name="player" parent="." instance=ExtResource("2_c2ylu")]
-position = Vector2(182, 475)
+position = Vector2(69, 137)
 scale = Vector2(0.526316, 0.529412)
 
 [node name="player_2" parent="." instance=ExtResource("3_3c4p0")]
@@ -39,9 +57,13 @@ position = Vector2(310, 227)
 position = Vector2(814, 47)
 
 [node name="dead" parent="." instance=ExtResource("5_mts6p")]
+offset_left = 1111.0
+offset_top = -1.0
+offset_right = 1111.0
+offset_bottom = -1.0
 
 [node name="Node2D" parent="." instance=ExtResource("6_lappd")]
-position = Vector2(999, 213)
+position = Vector2(1011, -29)
 scale = Vector2(3.30667, 33.8079)
 script = ExtResource("7_ydnke")
 
