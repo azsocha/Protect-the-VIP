@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://uwvv1fn28da"]
+[gd_scene load_steps=9 format=3 uid="uid://uwvv1fn28da"]
 
 [ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_44adr"]
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="1_b3w4w"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="4_tw6ie"]
 [ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="5_3c4ye"]
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="6_6fnut"]
+[ext_resource type="PackedScene" uid="uid://h3j3wynmxivf" path="res://bomber.tscn" id="8_ypxxb"]
 
 [node name="testing" type="Node2D"]
 
@@ -43,10 +44,17 @@ position = Vector2(-2, 9)
 rotation = 1.57827
 scale = Vector2(3.28348, 1.26145)
 
+[node name="bomber" parent="." instance=ExtResource("8_ypxxb")]
+position = Vector2(309, 559)
+scale = Vector2(0.414, 0.386)
+
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="outOfAmmo" from="player_2" to="player" method="outOfAmmo"]
 [connection signal="outOfAmmo" from="player_2" to="Sniper" method="outOfAmmo"]
+[connection signal="died" from="bomber" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="bomber" to="dead" method="_on_area_2d_died"]
 
 [editable path="Sniper"]
+[editable path="bomber"]
