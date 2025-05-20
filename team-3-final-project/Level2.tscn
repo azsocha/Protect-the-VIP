@@ -54,7 +54,35 @@ scale = Vector2(0.526316, 0.529412)
 position = Vector2(310, 227)
 
 [node name="Sniper" parent="." instance=ExtResource("4_5vhnd")]
-position = Vector2(814, 47)
+position = Vector2(375, 47)
+
+[node name="Sprite2D" parent="Sniper" index="0"]
+position = Vector2(400, 52)
+scale = Vector2(0.3, 0.226)
+
+[node name="CollisionShape2D" parent="Sniper/Sprite2D/Area2D" index="0"]
+position = Vector2(19.8366, -17.1232)
+
+[node name="Sniper3" parent="." instance=ExtResource("4_5vhnd")]
+position = Vector2(675, 47)
+
+[node name="Sprite2D" parent="Sniper3" index="0"]
+position = Vector2(400, 52)
+scale = Vector2(0.3, 0.226)
+
+[node name="CollisionShape2D" parent="Sniper3/Sprite2D/Area2D" index="0"]
+position = Vector2(19.8366, -17.1232)
+
+[node name="Sniper4" parent="." instance=ExtResource("4_5vhnd")]
+position = Vector2(100, 330)
+rotation = 0.0
+
+[node name="Sprite2D" parent="Sniper4" index="0"]
+position = Vector2(1500, 52)
+scale = Vector2(2, 0.226)
+
+[node name="CollisionShape2D" parent="Sniper4/Sprite2D/Area2D" index="0"]
+position = Vector2(19.8366, -17.1232)
 
 [node name="dead" parent="." instance=ExtResource("5_mts6p")]
 offset_left = 1111.0
@@ -75,8 +103,14 @@ scale = Vector2(1.51478, 0.653578)
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper3/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper3/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper4/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper4/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 
 [editable path="Sniper"]
+[editable path="Sniper3"]
+[editable path="Sniper4"]
 [editable path="Sniper2"]
