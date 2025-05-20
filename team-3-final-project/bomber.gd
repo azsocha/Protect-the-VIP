@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 signal died
+@onready var explodeSound = $AudioStreamPlayer2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		print("it worked")
+		explodeSound.play()
 		$AnimatedSprite2D.animation = "blowingUp"
 		$AnimatedSprite2D.play()
 		call_deferred("restart_level")
@@ -20,4 +22,3 @@ func _on_body_entered(body: Node2D) -> void:
 
 func restart_level():
 	died.emit()
-	print("bomb")
