@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://uwvv1fn28da"]
+
+[ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_5435l"]
+[ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="2_nisgf"]
+[ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="3_qynoe"]
+[ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_b1eld"]
+[ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="5_ubrff"]
+[ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_3667f"]
+[ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="7_3sdux"]
+
+[node name="testing" type="Node2D"]
+
+[node name="Cisc204FinalBackground1" type="Sprite2D" parent="."]
+light_mask = 0
+position = Vector2(512, 308)
+scale = Vector2(1.042, 0.612)
+texture = ExtResource("1_5435l")
+
+[node name="player" parent="." instance=ExtResource("2_nisgf")]
+position = Vector2(51, 560)
+scale = Vector2(0.470306, 0.502515)
+
+[node name="platform" parent="." instance=ExtResource("3_qynoe")]
+position = Vector2(-35, 597)
+scale = Vector2(5.71158, 1.00524)
+
+[node name="Sniper" parent="." instance=ExtResource("4_b1eld")]
+position = Vector2(589, 178)
+scale = Vector2(0.316729, 0.258752)
+
+[node name="player_2" parent="." instance=ExtResource("5_ubrff")]
+
+[node name="Goal" parent="." instance=ExtResource("6_3667f")]
+position = Vector2(948, 312)
+scale = Vector2(4.96, 28.3175)
+
+[node name="dead" parent="." instance=ExtResource("7_3sdux")]
+offset_left = -8.0
+offset_right = -8.0
+
+[node name="platform2" parent="." instance=ExtResource("3_qynoe")]
+position = Vector2(-2, 9)
+rotation = 1.57827
+scale = Vector2(3.28348, 1.26145)
+
+[connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="outOfAmmo" from="player_2" to="player" method="outOfAmmo"]
+[connection signal="outOfAmmo" from="player_2" to="Sniper" method="outOfAmmo"]
+
+[editable path="Sniper"]
