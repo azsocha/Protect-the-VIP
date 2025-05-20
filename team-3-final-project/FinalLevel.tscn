@@ -8,13 +8,26 @@
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_bcosa"]
 [ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_i5wwc"]
 [ext_resource type="Script" path="res://goal_area_two.gd" id="7_cct0h"]
-[ext_resource type="Script" path="res://collision_shape_2d.gd" id="8_vp3tf"]
 [ext_resource type="Script" path="res://label.gd" id="9_67b00"]
-[ext_resource type="PackedScene" path="res://Podium.tscn" id="11_fip3l"]
+[ext_resource type="PackedScene" uid="uid://cyqoof5loxpli" path="res://Podium.tscn" id="11_fip3l"]
 [ext_resource type="PackedScene" uid="uid://dgvimbby7mdxd" path="res://win.tscn" id="12_dja2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ur61"]
 size = Vector2(111, 196)
+
+[sub_resource type="GDScript" id="GDScript_hyppw"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Level 2" type="Node2D"]
 
@@ -57,14 +70,14 @@ scale = Vector2(1.51478, 0.653578)
 [node name="StopShape" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(600, 470)
 shape = SubResource("RectangleShape2D_0ur61")
-script = ExtResource("8_vp3tf")
+script = SubResource("GDScript_hyppw")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="StopShape" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-45, 479)
 shape = SubResource("RectangleShape2D_0ur61")
-script = ExtResource("8_vp3tf")
+script = SubResource("GDScript_hyppw")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 12.0
