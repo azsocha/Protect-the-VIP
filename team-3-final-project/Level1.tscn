@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs13rjckuxq5f"]
+[gd_scene load_steps=9 format=3 uid="uid://bs13rjckuxq5f"]
 
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_82bnj"]
 [ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_vv25m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_n34q8"]
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_g6ajj"]
 [ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_2vhen"]
+[ext_resource type="Script" path="res://goal_areal1.gd" id="8_2hobe"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -75,6 +76,7 @@ position = Vector2(19.8377, 11.5896)
 [node name="Node2D" parent="." instance=ExtResource("6_2vhen")]
 position = Vector2(973, 67)
 scale = Vector2(4.96, 17.2375)
+script = ExtResource("8_2hobe")
 
 [node name="platform6" parent="." instance=ExtResource("1_82bnj")]
 position = Vector2(-12, 126)

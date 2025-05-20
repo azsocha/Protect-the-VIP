@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_5vhnd"]
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_mts6p"]
 [ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_lappd"]
-[ext_resource type="Script" path="res://goal_area_two.gd" id="7_ydnke"]
+[ext_resource type="Script" path="res://goal_areal2.gd" id="8_8xcyf"]
 
 [node name="Level 2" type="Node2D"]
 
@@ -89,7 +89,7 @@ position = Vector2(19.8366, -17.1232)
 [node name="Node2D" parent="." instance=ExtResource("6_lappd")]
 position = Vector2(1011, -29)
 scale = Vector2(3.30667, 33.8079)
-script = ExtResource("7_ydnke")
+script = ExtResource("8_8xcyf")
 
 [node name="Sniper2" parent="." instance=ExtResource("4_5vhnd")]
 position = Vector2(1610, 753)
