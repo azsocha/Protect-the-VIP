@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 		print(ammo)
 		if ammo < 1:
 			outOfAmmo.emit()
-			print("Out of Ammo!")
 
 func lastLevelAmmo():
 		ammo = 2
