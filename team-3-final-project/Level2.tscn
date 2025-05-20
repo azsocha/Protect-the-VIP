@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_5vhnd"]
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_mts6p"]
 [ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_lappd"]
-[ext_resource type="Script" path="res://goal_area_two.gd" id="7_ydnke"]
+[ext_resource type="Script" path="res://goal_areal2.gd" id="8_8xcyf"]
 
 [node name="Level 2" type="Node2D"]
 
@@ -54,18 +54,42 @@ scale = Vector2(0.526316, 0.529412)
 position = Vector2(310, 227)
 
 [node name="Sniper" parent="." instance=ExtResource("4_5vhnd")]
-position = Vector2(814, 47)
+position = Vector2(375, 47)
+
+[node name="Sprite2D" parent="Sniper" index="0"]
+position = Vector2(400, 52)
+scale = Vector2(0.3, 0.226)
+
+[node name="CollisionShape2D" parent="Sniper/Sprite2D/Area2D" index="0"]
+position = Vector2(19.8366, -17.1232)
+
+[node name="Sniper3" parent="." instance=ExtResource("4_5vhnd")]
+position = Vector2(675, 47)
+
+[node name="Sprite2D" parent="Sniper3" index="0"]
+position = Vector2(400, 52)
+scale = Vector2(0.3, 0.226)
+
+[node name="CollisionShape2D" parent="Sniper3/Sprite2D/Area2D" index="0"]
+position = Vector2(19.8366, -17.1232)
+
+[node name="Sniper4" parent="." instance=ExtResource("4_5vhnd")]
+position = Vector2(100, 330)
+rotation = 0.0
+
+[node name="Sprite2D" parent="Sniper4" index="0"]
+position = Vector2(1500, 52)
+scale = Vector2(2, 0.226)
+
+[node name="CollisionShape2D" parent="Sniper4/Sprite2D/Area2D" index="0"]
+position = Vector2(19.8366, -17.1232)
 
 [node name="dead" parent="." instance=ExtResource("5_mts6p")]
-offset_left = 1111.0
-offset_top = -1.0
-offset_right = 1111.0
-offset_bottom = -1.0
 
 [node name="Node2D" parent="." instance=ExtResource("6_lappd")]
 position = Vector2(1011, -29)
 scale = Vector2(3.30667, 33.8079)
-script = ExtResource("7_ydnke")
+script = ExtResource("8_8xcyf")
 
 [node name="Sniper2" parent="." instance=ExtResource("4_5vhnd")]
 position = Vector2(1610, 753)
@@ -75,8 +99,14 @@ scale = Vector2(1.51478, 0.653578)
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper3/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper3/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper4/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
+[connection signal="died" from="Sniper4/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 
 [editable path="Sniper"]
+[editable path="Sniper3"]
+[editable path="Sniper4"]
 [editable path="Sniper2"]
