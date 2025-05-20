@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgvimbby7mdxd"]
+
+[ext_resource type="Script" path="res://win.gd" id="1_hs1ua"]
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hs1ua")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1039.0
+offset_bottom = 665.0
+color = Color(0.756863, 0.556863, 0.0392157, 1)
+
+[node name="restartGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 174.0
+offset_right = 794.0
+offset_bottom = 287.0
+text = "Exit to Title"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 106.0
+offset_right = 776.0
+offset_bottom = 228.0
+text = "You win!"
+
+[connection signal="pressed" from="restartGame" to="." method="_on_restart_game_pressed"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://d315g5w8plhy7"]
+[gd_scene load_steps=14 format=3 uid="uid://d315g5w8plhy7"]
 
+[ext_resource type="Texture2D" uid="uid://d8860fn0a8dg" path="res://PodiumBackground.png" id="1_1cuav"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_lqws8"]
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="2_3ey1a"]
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="3_u3g71"]
@@ -8,20 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_i5wwc"]
 [ext_resource type="Script" path="res://goal_area_two.gd" id="7_cct0h"]
 [ext_resource type="Script" path="res://collision_shape_2d.gd" id="8_vp3tf"]
-[ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="9_7uyec"]
 [ext_resource type="Script" path="res://label.gd" id="9_67b00"]
-[ext_resource type="PackedScene" uid="uid://d3qx7kd18jr4b" path="res://Podium.tscn" id="11_fip3l"]
+[ext_resource type="PackedScene" path="res://Podium.tscn" id="11_fip3l"]
+[ext_resource type="PackedScene" uid="uid://dgvimbby7mdxd" path="res://win.tscn" id="12_dja2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ur61"]
 size = Vector2(111, 196)
 
 [node name="Level 2" type="Node2D"]
 
-[node name="Cisc204FinalBackground1" type="Sprite2D" parent="."]
-light_mask = 0
-position = Vector2(497, 319)
-scale = Vector2(1.2, 1)
-texture = ExtResource("9_7uyec")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(500, 320)
+texture = ExtResource("1_1cuav")
 
 [node name="platform" parent="." instance=ExtResource("1_lqws8")]
 position = Vector2(1, 554)
@@ -82,14 +81,20 @@ autostart = true
 position = Vector2(515, 518)
 scale = Vector2(0.158449, 0.155822)
 
-[connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
+[node name="win" parent="." instance=ExtResource("12_dja2t")]
+offset_left = -11.0
+offset_top = -15.0
+offset_right = -11.0
+offset_bottom = -15.0
+
 [connection signal="died" from="player" to="Label" method="_on_player_died"]
+[connection signal="died" from="player" to="win" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
-[connection signal="input_event" from="StaticBody2D" to="player" method="_on_body_entered"]
 [connection signal="input_event" from="StaticBody2D" to="player" method="_on_static_body_2d_input_event"]
-[connection signal="input_event" from="StaticBody2D2" to="player" method="_on_body_entered"]
+[connection signal="input_event" from="StaticBody2D" to="player" method="_on_body_entered"]
 [connection signal="input_event" from="StaticBody2D2" to="player" method="_on_static_body_2d_input_event"]
+[connection signal="input_event" from="StaticBody2D2" to="player" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="Label" method="_on_timer_timeout"]
 
 [editable path="Sniper2"]

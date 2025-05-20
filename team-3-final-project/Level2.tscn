@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bn2jo1fssf4rs"]
+[gd_scene load_steps=10 format=3 uid="uid://bn2jo1fssf4rs"]
 
 [ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_5kwk0"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_y4nvs"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cgpvvcjmwt6va" path="res://dead.tscn" id="5_mts6p"]
 [ext_resource type="PackedScene" uid="uid://bn634m3hxxrv3" path="res://Goal area.tscn" id="6_lappd"]
 [ext_resource type="Script" path="res://goal_areal2.gd" id="8_8xcyf"]
+[ext_resource type="Texture2D" uid="uid://c7u0a2w6o362e" path="res://streetSign.png" id="9_xx4ar"]
 
 [node name="Level 2" type="Node2D"]
 
@@ -95,6 +96,11 @@ script = ExtResource("8_8xcyf")
 position = Vector2(1610, 753)
 rotation = 3.13406
 scale = Vector2(1.51478, 0.653578)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1012, 185)
+scale = Vector2(0.422, 0.484)
+texture = ExtResource("9_xx4ar")
 
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
