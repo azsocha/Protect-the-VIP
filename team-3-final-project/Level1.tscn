@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs13rjckuxq5f"]
+[gd_scene load_steps=8 format=3 uid="uid://bs13rjckuxq5f"]
 
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_82bnj"]
+[ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_vv25m"]
 [ext_resource type="PackedScene" uid="uid://bh182bfab16i5" path="res://player.tscn" id="2_4yyxw"]
 [ext_resource type="PackedScene" uid="uid://cwv5ooc24w7rm" path="res://player_2.tscn" id="3_5ldi5"]
 [ext_resource type="PackedScene" uid="uid://b87pu37cfwaei" path="res://sniper.tscn" id="4_n34q8"]
@@ -9,18 +10,26 @@
 
 [node name="Level 1" type="Node2D"]
 
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(519.5, 333)
+scale = Vector2(1.049, 0.664)
+texture = ExtResource("1_vv25m")
+
 [node name="platform" parent="." instance=ExtResource("1_82bnj")]
-position = Vector2(-116, 532)
-scale = Vector2(3, 1)
+position = Vector2(-118, 533)
+scale = Vector2(2.44, 1)
 
 [node name="platform2" parent="." instance=ExtResource("1_82bnj")]
-position = Vector2(450, 470)
+position = Vector2(382, 469)
+scale = Vector2(0.64, 1)
 
 [node name="platform3" parent="." instance=ExtResource("1_82bnj")]
-position = Vector2(566, 389)
+position = Vector2(529, 394)
+scale = Vector2(0.639998, 1)
 
 [node name="platform4" parent="." instance=ExtResource("1_82bnj")]
 position = Vector2(665, 314)
+scale = Vector2(0.640002, 1)
 
 [node name="platform5" parent="." instance=ExtResource("1_82bnj")]
 position = Vector2(778, 240)
@@ -66,6 +75,11 @@ position = Vector2(19.8377, 11.5896)
 [node name="Node2D" parent="." instance=ExtResource("6_2vhen")]
 position = Vector2(973, 67)
 scale = Vector2(4.96, 17.2375)
+
+[node name="platform6" parent="." instance=ExtResource("1_82bnj")]
+position = Vector2(-12, 126)
+rotation = 1.57157
+scale = Vector2(2.16616, -0.198794)
 
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]

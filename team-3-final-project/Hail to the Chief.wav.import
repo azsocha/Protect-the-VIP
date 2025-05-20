@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctepvjfy3bgcm"
+path="res://.godot/imported/Hail to the Chief.wav-00e7b5dc2d75c4bdd129ff0507427459.sample"
+
+[deps]
+
+source_file="res://Hail to the Chief.wav"
+dest_files=["res://.godot/imported/Hail to the Chief.wav-00e7b5dc2d75c4bdd129ff0507427459.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

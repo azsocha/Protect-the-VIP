@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b87pu37cfwaei"]
+[gd_scene load_steps=8 format=3 uid="uid://b87pu37cfwaei"]
 
 [ext_resource type="Texture2D" uid="uid://b2tk5d86f5u3c" path="res://Shooter man.png" id="1_ovadf"]
 [ext_resource type="Script" path="res://sniper.gd" id="2_rtax8"]
 [ext_resource type="Texture2D" uid="uid://g1wadrs3rfgs" path="res://rlaz.png" id="2_xysxd"]
 [ext_resource type="Script" path="res://death_laser.gd" id="3_m7l6r"]
+[ext_resource type="AudioStream" uid="uid://qiwatuq1gbb8" path="res://Enemy sniper wav.wav" id="5_jpg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wup0p"]
 radius = 13.8129
@@ -30,6 +31,9 @@ script = ExtResource("3_m7l6r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 scale = Vector2(63.4155, -3.32454)
 shape = SubResource("CapsuleShape2D_wup0p")
+
+[node name="EnemySound" type="AudioStreamPlayer2D" parent="Sprite2D/Area2D"]
+stream = ExtResource("5_jpg0r")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(1, 0.845452)
