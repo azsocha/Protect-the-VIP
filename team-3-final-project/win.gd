@@ -1,5 +1,6 @@
 extends Control
 
+@onready var winSound = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,7 @@ func _on_restart_game_pressed() -> void:
 
 
 func _on_area_2d_died() -> void:
+	winSound.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$ColorRect.show()
 	$restartGame.show()
