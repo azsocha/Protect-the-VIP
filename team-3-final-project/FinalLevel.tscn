@@ -52,11 +52,6 @@ scale = Vector2(0.966316, 1.12941)
 position = Vector2(310, 227)
 ammo = 1
 
-[node name="dead" parent="." instance=ExtResource("5_bcosa")]
-visible = false
-offset_top = -17.0
-offset_bottom = -17.0
-
 [node name="Node2D" parent="." instance=ExtResource("6_i5wwc")]
 position = Vector2(999, 213)
 scale = Vector2(3.30667, 33.8079)
@@ -103,16 +98,28 @@ offset_right = -11.0
 offset_bottom = -15.0
 
 [node name="Ammo" parent="." instance=ExtResource("12_5snrt")]
+ammoDisplay = 1
+
+[node name="dead" parent="." instance=ExtResource("5_bcosa")]
+offset_top = -17.0
+offset_bottom = -17.0
+
+[node name="RichTextLabel" parent="dead" index="3"]
+text = "You lose!"
 
 [connection signal="died" from="player" to="Label" method="_on_player_died"]
 [connection signal="died" from="player" to="win" method="_on_area_2d_died"]
 [connection signal="outOfAmmo" from="player_2" to="player" method="outOfAmmo"]
+[connection signal="outOfAmmo" from="player_2" to="Ammo" method="decreaseAmmo"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="input_event" from="StaticBody2D" to="player" method="_on_static_body_2d_input_event"]
 [connection signal="input_event" from="StaticBody2D" to="player" method="_on_body_entered"]
 [connection signal="input_event" from="StaticBody2D2" to="player" method="_on_static_body_2d_input_event"]
 [connection signal="input_event" from="StaticBody2D2" to="player" method="_on_body_entered"]
+[connection signal="died" from="Label" to="win" method="_on_label_died"]
+[connection signal="died" from="Label" to="dead" method="_on_area_2d_died"]
 [connection signal="timeout" from="Timer" to="Label" method="_on_timer_timeout"]
 
 [editable path="Sniper2"]
+[editable path="dead"]

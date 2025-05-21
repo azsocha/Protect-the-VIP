@@ -1,5 +1,6 @@
 extends Label
 var count = 0
+signal died
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,7 +37,8 @@ func _process(delta: float) -> void:
 		text = "So, to reiterate..."
 	elif count == 13:
 		text = "..."
-		count = 5
+		died.emit()
+		
 
 
 func _on_player_died() -> void:

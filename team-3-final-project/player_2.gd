@@ -2,6 +2,7 @@ extends Sprite2D
 
 @export var ammo = 9999999
 signal outOfAmmo
+signal shot
 
 @onready var shoot_sound = $ShootSound
 
@@ -20,12 +21,6 @@ func _process(delta: float) -> void:
 		await get_tree().create_timer(0.3).timeout
 		texture = load("res://characterImages/crosshair.png")
 		ammo = ammo - 1
-		print(ammo)
+		shot.emit()
 		if ammo < 1:
 			outOfAmmo.emit()
-
-func lastLevelAmmo():
-		ammo = 2
-
-func cutsceneAmmo():
-		ammo = 1

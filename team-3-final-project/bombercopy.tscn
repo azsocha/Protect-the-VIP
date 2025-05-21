@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4kjydweo1ffh"]
+
+[ext_resource type="Texture2D" uid="uid://b2tk5d86f5u3c" path="res://Shooter man.png" id="1_p47qf"]
+[ext_resource type="Script" path="res://sniper.gd" id="2_inrvo"]
+[ext_resource type="Texture2D" uid="uid://g1wadrs3rfgs" path="res://rlaz.png" id="3_54m2q"]
+[ext_resource type="Script" path="res://death_laser.gd" id="4_ww1yk"]
+[ext_resource type="AudioStream" uid="uid://qiwatuq1gbb8" path="res://Enemy sniper wav.wav" id="5_5gdjx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wup0p"]
+radius = 13.8129
+height = 32.1014
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cm8vw"]
+radius = 11.1388
+
+[node name="Sniper" type="Sprite2D"]
+position = Vector2(496, 49)
+rotation = 1.57086
+scale = Vector2(0.302464, 0.25882)
+texture = ExtResource("1_p47qf")
+script = ExtResource("2_inrvo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(879.446, 46.3042)
+scale = Vector2(1.205, 0.225995)
+texture = ExtResource("3_54m2q")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+script = ExtResource("4_ww1yk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+scale = Vector2(63.4155, -3.32454)
+shape = SubResource("CapsuleShape2D_wup0p")
+
+[node name="EnemySound" type="AudioStreamPlayer2D" parent="Sprite2D/Area2D"]
+stream = ExtResource("5_5gdjx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1, 0.845452)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-26.4485, 19.3204)
+scale = Vector2(11.3973, 10.3881)
+shape = SubResource("CircleShape2D_cm8vw")
+
+[connection signal="body_entered" from="Sprite2D/Area2D" to="Sprite2D/Area2D" method="_on_body_entered"]

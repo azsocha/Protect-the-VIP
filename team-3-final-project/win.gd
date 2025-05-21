@@ -21,3 +21,7 @@ func _on_area_2d_died() -> void:
 	$ColorRect.show()
 	$restartGame.show()
 	$RichTextLabel.show()
+
+
+func _on_label_died() -> void:
+	queue_free()
