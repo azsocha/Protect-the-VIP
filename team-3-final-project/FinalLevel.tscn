@@ -91,14 +91,14 @@ autostart = true
 position = Vector2(515, 518)
 scale = Vector2(0.158449, 0.155822)
 
+[node name="Ammo" parent="." instance=ExtResource("12_5snrt")]
+ammoDisplay = 1
+
 [node name="win" parent="." instance=ExtResource("12_dja2t")]
 offset_left = -11.0
 offset_top = -15.0
 offset_right = -11.0
 offset_bottom = -15.0
-
-[node name="Ammo" parent="." instance=ExtResource("12_5snrt")]
-ammoDisplay = 1
 
 [node name="dead" parent="." instance=ExtResource("5_bcosa")]
 offset_top = -17.0

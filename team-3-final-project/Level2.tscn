@@ -89,8 +89,6 @@ scale = Vector2(2, 0.226)
 [node name="CollisionShape2D" parent="Sniper4/Sprite2D/Area2D" index="0"]
 position = Vector2(19.8366, -17.1232)
 
-[node name="dead" parent="." instance=ExtResource("5_mts6p")]
-
 [node name="Node2D" parent="." instance=ExtResource("6_lappd")]
 position = Vector2(1011, -29)
 scale = Vector2(3.30667, 33.8079)
@@ -114,6 +112,18 @@ position = Vector2(915, 263)
 [node name="winSound" parent="." instance=ExtResource("12_ovnca")]
 position = Vector2(310, 227)
 scale = Vector2(0.3, 0.3)
+
+[node name="dead" parent="." instance=ExtResource("5_mts6p")]
+
+[node name="platform9" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(-4, -56)
+rotation = 1.5708
+scale = Vector2(1.6, 1)
+
+[node name="platform10" parent="." instance=ExtResource("1_y4nvs")]
+position = Vector2(1096, 58)
+rotation = 1.5708
+scale = Vector2(1.6, 1)
 
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="outOfAmmo" from="player_2" to="player" method="outOfAmmo"]

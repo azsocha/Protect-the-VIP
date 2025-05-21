@@ -36,17 +36,13 @@ scale = Vector2(0.316729, 0.258752)
 position = Vector2(948, 312)
 scale = Vector2(4.96, 28.3175)
 
-[node name="dead" parent="." instance=ExtResource("6_6fnut")]
-offset_left = -8.0
-offset_right = -8.0
-
 [node name="platform2" parent="." instance=ExtResource("2_r2468")]
 position = Vector2(-2, 9)
 rotation = 1.57827
 scale = Vector2(3.28348, 1.26145)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(955, 475)
+position = Vector2(930, 475)
 scale = Vector2(0.422, 0.484)
 texture = ExtResource("9_tdfj4")
 
@@ -56,6 +52,37 @@ texture = ExtResource("9_tdfj4")
 position = Vector2(1059, 8)
 rotation = 1.57827
 scale = Vector2(3.28348, 1.26145)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 9.0
+offset_top = 617.0
+offset_right = 375.0
+offset_bottom = 653.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+text = "Player 1: WASD to move and jump"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 345.0
+offset_top = 617.0
+offset_right = 711.0
+offset_bottom = 653.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+text = "Player 2: Mouse and Left Click to shoot"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 720.0
+offset_top = 617.0
+offset_right = 1086.0
+offset_bottom = 653.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+text = "Goal: Get the VIP to the green!"
+
+[node name="dead" parent="." instance=ExtResource("6_6fnut")]
+offset_left = -8.0
+offset_right = -8.0
 
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
