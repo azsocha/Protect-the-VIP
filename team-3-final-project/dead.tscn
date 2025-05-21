@@ -15,31 +15,33 @@ script = ExtResource("1_0lo3c")
 layout_mode = 0
 offset_right = 1039.0
 offset_bottom = 665.0
-color = Color(0.952941, 0.34902, 0.372549, 0.533333)
+color = Color(0.952941, 0.34902, 0.372549, 0.509804)
 
 [node name="retryLevel" type="Button" parent="."]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 229.0
-offset_right = 452.0
-offset_bottom = 445.0
+offset_left = 50.0
+offset_top = 542.0
+offset_right = 354.0
+offset_bottom = 622.0
+theme_override_font_sizes/font_size = 45
 text = "Retry Level"
 
 [node name="restartGame" type="Button" parent="."]
 layout_mode = 0
-offset_left = 587.0
-offset_top = 247.0
-offset_right = 869.0
-offset_bottom = 427.0
+offset_left = 636.0
+offset_top = 542.0
+offset_right = 941.0
+offset_bottom = 622.0
+theme_override_font_sizes/font_size = 45
 text = "Restart Game"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 461.0
-offset_top = 130.0
-offset_right = 803.0
-offset_bottom = 252.0
-text = "You died!"
+offset_left = 50.0
+offset_right = 1039.0
+offset_bottom = 542.0
+theme_override_font_sizes/normal_font_size = 200
+text = "You died, sorry!"
 
 [connection signal="pressed" from="retryLevel" to="." method="_on_retry_level_pressed"]
 [connection signal="pressed" from="restartGame" to="." method="_on_restart_game_pressed"]

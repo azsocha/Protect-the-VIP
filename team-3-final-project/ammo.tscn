@@ -17,6 +17,7 @@ offset_left = 767.0
 offset_top = 585.0
 offset_right = 1048.0
 offset_bottom = 680.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Ammo:"
 
@@ -25,5 +26,6 @@ offset_left = 949.0
 offset_top = 585.0
 offset_right = 1230.0
 offset_bottom = 680.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "3"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bn2jo1fssf4rs"]
+[gd_scene load_steps=13 format=3 uid="uid://bn2jo1fssf4rs"]
 
 [ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_5kwk0"]
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_y4nvs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c7u0a2w6o362e" path="res://streetSign.png" id="9_xx4ar"]
 [ext_resource type="PackedScene" uid="uid://h3j3wynmxivf" path="res://bomber.tscn" id="10_bg3h3"]
 [ext_resource type="PackedScene" uid="uid://dvdfumi2h4e8e" path="res://ammo.tscn" id="11_vt5am"]
+[ext_resource type="PackedScene" uid="uid://bg5ot3vfq5r2f" path="res://win_sound.tscn" id="12_ovnca"]
 
 [node name="Level 2" type="Node2D"]
 
@@ -110,6 +111,10 @@ position = Vector2(915, 263)
 
 [node name="Ammo" parent="." instance=ExtResource("11_vt5am")]
 
+[node name="winSound" parent="." instance=ExtResource("12_ovnca")]
+position = Vector2(310, 227)
+scale = Vector2(0.3, 0.3)
+
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="outOfAmmo" from="player_2" to="player" method="outOfAmmo"]
 [connection signal="outOfAmmo" from="player_2" to="Sniper" method="outOfAmmo"]
@@ -123,6 +128,7 @@ position = Vector2(915, 263)
 [connection signal="died" from="Sniper3/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper4/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper4/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="body_entered" from="Node2D" to="winSound" method="_on_goal_body_entered"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper2/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="bomber" to="player" method="_on_area_2d_died"]

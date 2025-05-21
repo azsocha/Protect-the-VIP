@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs13rjckuxq5f"]
+[gd_scene load_steps=12 format=3 uid="uid://bs13rjckuxq5f"]
 
 [ext_resource type="PackedScene" uid="uid://h04h3fu4rh1a" path="res://platform.tscn" id="1_82bnj"]
 [ext_resource type="Texture2D" uid="uid://bs0bkshe8rxne" path="res://Sprites/Cisc204 final background1.png" id="1_vv25m"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://goal_areal1.gd" id="8_2hobe"]
 [ext_resource type="Texture2D" uid="uid://c7u0a2w6o362e" path="res://streetSign.png" id="9_7rlyk"]
 [ext_resource type="PackedScene" uid="uid://h3j3wynmxivf" path="res://bomber.tscn" id="10_km4b6"]
+[ext_resource type="PackedScene" uid="uid://bg5ot3vfq5r2f" path="res://win_sound.tscn" id="11_noj2h"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -93,6 +94,10 @@ texture = ExtResource("9_7rlyk")
 [node name="bomber" parent="." instance=ExtResource("10_km4b6")]
 position = Vector2(820, 192)
 
+[node name="winSound" parent="." instance=ExtResource("11_noj2h")]
+position = Vector2(973, 67)
+scale = Vector2(4.96, 17.2375)
+
 [connection signal="died" from="player" to="dead" method="_on_area_2d_died"]
 [connection signal="outOfAmmo" from="player_2" to="player" method="outOfAmmo"]
 [connection signal="outOfAmmo" from="player_2" to="Sniper" method="outOfAmmo"]
@@ -107,6 +112,7 @@ position = Vector2(820, 192)
 [connection signal="died" from="Sniper3/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper3/Sniper3/Sprite2D/Area2D" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="Sniper3/Sniper3/Sprite2D/Area2D" to="dead" method="_on_area_2d_died"]
+[connection signal="body_entered" from="Node2D" to="winSound" method="_on_goal_body_entered"]
 [connection signal="died" from="bomber" to="player" method="_on_area_2d_died"]
 [connection signal="died" from="bomber" to="dead" method="_on_area_2d_died"]
 
